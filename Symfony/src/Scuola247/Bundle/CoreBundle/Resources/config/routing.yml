@@ -1,3 +1,8 @@
 scuola247_core_homepage:
     pattern:  /hello/{name}
     defaults: { _controller: Scuola247CoreBundle:Default:index }
+
+user_base:
+  resource: "@Scuola247CoreBundle/Controller/NazioniController.php"
+  type: annotation
+
