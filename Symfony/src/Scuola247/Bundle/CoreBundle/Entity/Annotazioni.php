@@ -55,7 +55,7 @@ class Annotazioni
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Personefisiche")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="alunno", referencedColumnName="personafisica")
+     *   @ORM\JoinColumn(name="alunno", referencedColumnName="personafisica_id")
      * })
      */
     private $alunno;
@@ -65,7 +65,7 @@ class Annotazioni
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Personefisiche")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="docente", referencedColumnName="personafisica")
+     *   @ORM\JoinColumn(name="docente", referencedColumnName="personafisica_id")
      * })
      */
     private $docente;
