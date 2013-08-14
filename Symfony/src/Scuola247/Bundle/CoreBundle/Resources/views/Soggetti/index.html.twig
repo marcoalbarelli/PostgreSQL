@@ -1,0 +1,47 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Soggetti list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Descrizione</th>
+                <th>Tiposoggetto</th>
+                <th>Foto</th>
+                <th>Autorizzazionedatipersonali</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('soggetti_show', { 'id': entity.id }) }}">{{ entity.descrizione }}</a></td>
+                <td>{{ entity.tiposoggetto }}</td>
+                <td>{{ entity.foto }}</td>
+                <td>{% if entity.autorizzazionedatipersonali %}{{ entity.autorizzazionedatipersonali|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.id }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('soggetti_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('soggetti_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('soggetti_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

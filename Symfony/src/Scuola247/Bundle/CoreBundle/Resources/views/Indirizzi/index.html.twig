@@ -1,0 +1,61 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Indirizzi list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Prefissovia</th>
+                <th>Via</th>
+                <th>Civico</th>
+                <th>Isolato</th>
+                <th>Palazzo</th>
+                <th>Scala</th>
+                <th>Piano</th>
+                <th>Interno</th>
+                <th>Cap</th>
+                <th>Localita</th>
+                <th>Provincia</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('indirizzi_show', { 'id': entity.id }) }}">{{ entity.prefissovia }}</a></td>
+                <td>{{ entity.via }}</td>
+                <td>{{ entity.civico }}</td>
+                <td>{{ entity.isolato }}</td>
+                <td>{{ entity.palazzo }}</td>
+                <td>{{ entity.scala }}</td>
+                <td>{{ entity.piano }}</td>
+                <td>{{ entity.interno }}</td>
+                <td>{{ entity.cap }}</td>
+                <td>{{ entity.localita }}</td>
+                <td>{{ entity.provincia }}</td>
+                <td>{{ entity.id }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('indirizzi_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('indirizzi_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('indirizzi_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

@@ -1,0 +1,43 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Personegiuridiche list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Partitaiva</th>
+                <th>Codicefiscale</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('personegiuridiche_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.partitaiva }}</td>
+                <td>{{ entity.codicefiscale }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('personegiuridiche_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('personegiuridiche_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('personegiuridiche_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

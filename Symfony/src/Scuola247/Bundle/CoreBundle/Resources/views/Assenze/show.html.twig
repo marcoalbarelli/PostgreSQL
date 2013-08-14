@@ -1,0 +1,46 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Assenze</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Giorno</th>
+                <td>{{ entity.giorno|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Periododilezione</th>
+                <td>{{ entity.periododilezione }}</td>
+            </tr>
+            <tr>
+                <th>Rilevazione</th>
+                <td>{{ entity.rilevazione }}</td>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('assenze') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('assenze_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('assenze_delete', { 'id': entity.id }) }}" method="post">
+            <input type="hidden" name="_method" value="DELETE" />
+            {{ form_widget(delete_form) }}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>
+{% endblock %}
