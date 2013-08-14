@@ -27,7 +27,7 @@ class Materiedeidocenti
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Personefisiche")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="docente", referencedColumnName="personafisica")
+     *   @ORM\JoinColumn(name="docente",  referencedColumnName="id")
      * })
      */
     private $docente;
@@ -37,7 +37,7 @@ class Materiedeidocenti
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Materie")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="materia", referencedColumnName="materia")
+     *   @ORM\JoinColumn(name="materia",  referencedColumnName="id")
      * })
      */
     private $materia;
@@ -47,7 +47,7 @@ class Materiedeidocenti
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Classi")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="classe", referencedColumnName="classe")
+     *   @ORM\JoinColumn(name="classe",  referencedColumnName="id")
      * })
      */
     private $classe;

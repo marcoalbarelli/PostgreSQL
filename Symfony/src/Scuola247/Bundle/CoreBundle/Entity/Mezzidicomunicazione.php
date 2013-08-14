@@ -29,19 +29,19 @@ class Mezzidicomunicazione
     /**
      * @var integer
      *
-     * @ORM\Column(name="mezzodicomunicazione", type="integer")
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="SEQUENCE")
      * @ORM\SequenceGenerator(sequenceName="mezzidicomunicazione_mezzodicomunicazione_seq", allocationSize=1, initialValue=1)
      */
-    private $mezzodicomunicazione;
+    private $id;
 
     /**
      * @var \Scuola247\Bundle\CoreBundle\Entity\Tipidicomunicazione
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Tipidicomunicazione")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="tipodicomunicazione", referencedColumnName="tipodicomunicazione")
+     *   @ORM\JoinColumn(name="tipodicomunicazione",  referencedColumnName="id")
      * })
      */
     private $tipodicomunicazione;
@@ -51,7 +51,7 @@ class Mezzidicomunicazione
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Soggetti")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="soggetto", referencedColumnName="soggetto")
+     *   @ORM\JoinColumn(name="soggetto",  referencedColumnName="id")
      * })
      */
     private $soggetto;

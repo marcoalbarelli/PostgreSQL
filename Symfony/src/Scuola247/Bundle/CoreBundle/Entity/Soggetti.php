@@ -43,19 +43,19 @@ class Soggetti
     /**
      * @var integer
      *
-     * @ORM\Column(name="soggetto", type="integer")
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="SEQUENCE")
      * @ORM\SequenceGenerator(sequenceName="soggetti_soggetto_seq", allocationSize=1, initialValue=1)
      */
-    private $soggetto;
+    private $id;
 
     /**
      * @var \Scuola247\Bundle\CoreBundle\Entity\Soggetti
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Soggetti")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="soggettodiriferimento", referencedColumnName="soggetto")
+     *   @ORM\JoinColumn(name="soggettodiriferimento",  referencedColumnName="id")
      * })
      */
     private $soggettodiriferimento;
@@ -65,7 +65,7 @@ class Soggetti
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Istituti")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="istituto", referencedColumnName="istituto")
+     *   @ORM\JoinColumn(name="istituto",  referencedColumnName="id")
      * })
      */
     private $istituto;

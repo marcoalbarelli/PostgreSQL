@@ -22,12 +22,12 @@ class Tipipersonegiuridiche
     /**
      * @var integer
      *
-     * @ORM\Column(name="tipopersonagiuridica", type="integer")
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="SEQUENCE")
      * @ORM\SequenceGenerator(sequenceName="tipipersonegiuridiche_tipopersonagiuridica_seq", allocationSize=1, initialValue=1)
      */
-    private $tipopersonagiuridica;
+    private $id;
 
 
 }

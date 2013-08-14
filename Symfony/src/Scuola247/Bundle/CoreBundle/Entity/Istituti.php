@@ -29,12 +29,12 @@ class Istituti
     /**
      * @var integer
      *
-     * @ORM\Column(name="istituto", type="integer")
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="SEQUENCE")
      * @ORM\SequenceGenerator(sequenceName="istituti_istituto_seq", allocationSize=1, initialValue=1)
      */
-    private $istituto;
+    private $id;
 
 
 }

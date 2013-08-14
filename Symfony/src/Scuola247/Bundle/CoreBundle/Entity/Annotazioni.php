@@ -43,19 +43,19 @@ class Annotazioni
     /**
      * @var integer
      *
-     * @ORM\Column(name="annotazione", type="integer")
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="SEQUENCE")
      * @ORM\SequenceGenerator(sequenceName="annotazioni_annotazione_seq", allocationSize=1, initialValue=1)
      */
-    private $annotazione;
+    private $id;
 
     /**
      * @var \Scuola247\Bundle\CoreBundle\Entity\Personefisiche
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Personefisiche")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="alunno", referencedColumnName="personafisica_id")
+     *   @ORM\JoinColumn(name="alunno",  referencedColumnName="id")
      * })
      */
     private $alunno;
@@ -65,7 +65,7 @@ class Annotazioni
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Personefisiche")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="docente", referencedColumnName="personafisica_id")
+     *   @ORM\JoinColumn(name="docente",  referencedColumnName="id")
      * })
      */
     private $docente;
@@ -75,7 +75,7 @@ class Annotazioni
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Classi")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="classe", referencedColumnName="classe")
+     *   @ORM\JoinColumn(name="classe",  referencedColumnName="id")
      * })
      */
     private $classe;

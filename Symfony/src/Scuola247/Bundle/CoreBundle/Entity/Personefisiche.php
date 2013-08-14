@@ -13,6 +13,16 @@ use Doctrine\ORM\Mapping as ORM;
 class Personefisiche
 {
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="SEQUENCE")
+     * @ORM\SequenceGenerator(sequenceName="personafisiche_personafisica_seq", allocationSize=1, initialValue=1)
+     */
+    private $id;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="nome", type="string", length=60, nullable=false)
@@ -73,7 +83,7 @@ class Personefisiche
      *
      * @ORM\OneToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Soggetti")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="personafisica", referencedColumnName="soggetto", unique=true)
+     *   @ORM\JoinColumn(name="personafisica",  referencedColumnName="id", unique=true)
      * })
      */
     private $personafisica;
@@ -83,7 +93,7 @@ class Personefisiche
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Personefisiche")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="tutore", referencedColumnName="personafisica")
+     *   @ORM\JoinColumn(name="tutore",  referencedColumnName="id")
      * })
      */
     private $tutore;
@@ -93,7 +103,7 @@ class Personefisiche
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Personefisiche")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="padre", referencedColumnName="personafisica")
+     *   @ORM\JoinColumn(name="padre",  referencedColumnName="id")
      * })
      */
     private $padre;
@@ -103,7 +113,7 @@ class Personefisiche
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Nazioni")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="nazionedinascita", referencedColumnName="nazione")
+     *   @ORM\JoinColumn(name="nazionedinascita",  referencedColumnName="id")
      * })
      */
     private $nazionedinascita;
@@ -113,7 +123,7 @@ class Personefisiche
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Personefisiche")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="madre", referencedColumnName="personafisica")
+     *   @ORM\JoinColumn(name="madre",  referencedColumnName="id")
      * })
      */
     private $madre;

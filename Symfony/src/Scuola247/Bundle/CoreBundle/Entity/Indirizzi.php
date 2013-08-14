@@ -92,19 +92,19 @@ class Indirizzi
     /**
      * @var integer
      *
-     * @ORM\Column(name="indirizzo", type="integer")
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="SEQUENCE")
      * @ORM\SequenceGenerator(sequenceName="indirizzi_indirizzo_seq", allocationSize=1, initialValue=1)
      */
-    private $indirizzo;
+    private $id;
 
     /**
      * @var \Scuola247\Bundle\CoreBundle\Entity\Tipiindirizzi
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Tipiindirizzi")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="tipoindirizzo", referencedColumnName="tipoindirizzo")
+     *   @ORM\JoinColumn(name="tipoindirizzo",  referencedColumnName="id")
      * })
      */
     private $tipoindirizzo;
@@ -114,7 +114,7 @@ class Indirizzi
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Soggetti")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="soggetto", referencedColumnName="soggetto")
+     *   @ORM\JoinColumn(name="soggetto",  referencedColumnName="id")
      * })
      */
     private $soggetto;
@@ -124,7 +124,7 @@ class Indirizzi
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Nazioni")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="nazione", referencedColumnName="nazione")
+     *   @ORM\JoinColumn(name="nazione",  referencedColumnName="id")
      * })
      */
     private $nazione;

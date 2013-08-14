@@ -15,19 +15,19 @@ class Figureprofessionalidettagli
     /**
      * @var integer
      *
-     * @ORM\Column(name="figuraprofessionaledettaglio", type="integer")
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="SEQUENCE")
      * @ORM\SequenceGenerator(sequenceName="figureprofessionalidettagli_figuraprofessionaledettaglio_seq", allocationSize=1, initialValue=1)
      */
-    private $figuraprofessionaledettaglio;
+    private $id;
 
     /**
      * @var \Scuola247\Bundle\CoreBundle\Entity\Soggetti
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Soggetti")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="soggetto", referencedColumnName="soggetto")
+     *   @ORM\JoinColumn(name="soggetto",  referencedColumnName="id")
      * })
      */
     private $soggetto;
@@ -37,7 +37,7 @@ class Figureprofessionalidettagli
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Personefisiche")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="personafisica", referencedColumnName="personafisica")
+     *   @ORM\JoinColumn(name="personafisica",  referencedColumnName="id")
      * })
      */
     private $personafisica;
@@ -47,7 +47,7 @@ class Figureprofessionalidettagli
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Figureprofessionali")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="figuraprofessionale", referencedColumnName="figuraprofessionale")
+     *   @ORM\JoinColumn(name="figuraprofessionale",  referencedColumnName="id")
      * })
      */
     private $figuraprofessionale;

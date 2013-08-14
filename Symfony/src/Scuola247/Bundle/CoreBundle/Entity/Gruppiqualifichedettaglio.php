@@ -15,19 +15,19 @@ class Gruppiqualifichedettaglio
     /**
      * @var integer
      *
-     * @ORM\Column(name="gruppoqualifichedetaglio", type="integer")
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="SEQUENCE")
      * @ORM\SequenceGenerator(sequenceName="gruppiqualifichedettaglio_gruppoqualifichedetaglio_seq", allocationSize=1, initialValue=1)
      */
-    private $gruppoqualifichedetaglio;
+    private $id;
 
     /**
      * @var \Scuola247\Bundle\CoreBundle\Entity\Qualifiche
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Qualifiche")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="qualifica", referencedColumnName="qualifica")
+     *   @ORM\JoinColumn(name="qualifica",  referencedColumnName="id")
      * })
      */
     private $qualifica;
@@ -37,7 +37,7 @@ class Gruppiqualifichedettaglio
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Gruppiqualifiche")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="gruppoqualifiche", referencedColumnName="gruppoqualifiche")
+     *   @ORM\JoinColumn(name="gruppoqualifiche",  referencedColumnName="id")
      * })
      */
     private $gruppoqualifiche;

@@ -29,19 +29,19 @@ class Voti
     /**
      * @var integer
      *
-     * @ORM\Column(name="voto", type="integer")
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="SEQUENCE")
      * @ORM\SequenceGenerator(sequenceName="voti_voto_seq", allocationSize=1, initialValue=1)
      */
-    private $voto;
+    private $id;
 
     /**
      * @var \Scuola247\Bundle\CoreBundle\Entity\Metriche
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Metriche")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="metrica", referencedColumnName="metrica")
+     *   @ORM\JoinColumn(name="metrica",  referencedColumnName="id")
      * })
      */
     private $metrica;

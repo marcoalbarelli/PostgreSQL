@@ -36,19 +36,19 @@ class Assenze
     /**
      * @var integer
      *
-     * @ORM\Column(name="assenza", type="integer")
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="SEQUENCE")
      * @ORM\SequenceGenerator(sequenceName="assenze_assenza_seq", allocationSize=1, initialValue=1)
      */
-    private $assenza;
+    private $id;
 
     /**
      * @var \Scuola247\Bundle\CoreBundle\Entity\Personefisiche
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Personefisiche")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="alunno", referencedColumnName="personafisica")
+     *   @ORM\JoinColumn(name="alunno",  referencedColumnName="id")
      * })
      */
     private $alunno;
@@ -58,7 +58,7 @@ class Assenze
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Personefisiche")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="docente", referencedColumnName="personafisica")
+     *   @ORM\JoinColumn(name="docente",  referencedColumnName="id")
      * })
      */
     private $docente;
@@ -68,7 +68,7 @@ class Assenze
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Giustificazioni")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="giustificazione", referencedColumnName="giustificazione")
+     *   @ORM\JoinColumn(name="giustificazione",  referencedColumnName="id")
      * })
      */
     private $giustificazione;
@@ -78,7 +78,7 @@ class Assenze
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Classi")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="classe", referencedColumnName="classe")
+     *   @ORM\JoinColumn(name="classe",  referencedColumnName="id")
      * })
      */
     private $classe;

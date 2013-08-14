@@ -36,12 +36,12 @@ class Nazioni
     /**
      * @var integer
      *
-     * @ORM\Column(name="nazione", type="integer")
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="SEQUENCE")
      * @ORM\SequenceGenerator(sequenceName="nazioni_nazione_seq", allocationSize=1, initialValue=1)
      */
-    private $nazione;
+    private $id;
 
 
 }

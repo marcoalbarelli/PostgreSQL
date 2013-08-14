@@ -36,19 +36,19 @@ class Giustificazioni
     /**
      * @var integer
      *
-     * @ORM\Column(name="giustificazione", type="integer")
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="SEQUENCE")
      * @ORM\SequenceGenerator(sequenceName="giustificazioni_giustificazione_seq", allocationSize=1, initialValue=1)
      */
-    private $giustificazione;
+    private $id;
 
     /**
      * @var \Scuola247\Bundle\CoreBundle\Entity\Personefisiche
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Personefisiche")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="docente", referencedColumnName="personafisica")
+     *   @ORM\JoinColumn(name="docente",  referencedColumnName="id")
      * })
      */
     private $docente;
@@ -58,7 +58,7 @@ class Giustificazioni
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Personefisiche")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="alunno", referencedColumnName="personafisica")
+     *   @ORM\JoinColumn(name="alunno",  referencedColumnName="id")
      * })
      */
     private $alunno;
@@ -68,7 +68,7 @@ class Giustificazioni
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Librettipersonaliconversazioni")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="librettopersonaleconversazione", referencedColumnName="librettopersonaleconversazione")
+     *   @ORM\JoinColumn(name="librettopersonaleconversazione",  referencedColumnName="id")
      * })
      */
     private $librettopersonaleconversazione;
@@ -78,7 +78,7 @@ class Giustificazioni
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Classi")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="classe", referencedColumnName="classe")
+     *   @ORM\JoinColumn(name="classe",  referencedColumnName="id")
      * })
      */
     private $classe;

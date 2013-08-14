@@ -22,19 +22,19 @@ class Materie
     /**
      * @var integer
      *
-     * @ORM\Column(name="materia", type="integer")
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="SEQUENCE")
      * @ORM\SequenceGenerator(sequenceName="materie_materia_seq", allocationSize=1, initialValue=1)
      */
-    private $materia;
+    private $id;
 
     /**
      * @var \Scuola247\Bundle\CoreBundle\Entity\Metriche
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Metriche")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="metrica", referencedColumnName="metrica")
+     *   @ORM\JoinColumn(name="metrica",  referencedColumnName="id")
      * })
      */
     private $metrica;
@@ -44,7 +44,7 @@ class Materie
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Istituti")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="istituto", referencedColumnName="istituto")
+     *   @ORM\JoinColumn(name="istituto",  referencedColumnName="id")
      * })
      */
     private $istituto;

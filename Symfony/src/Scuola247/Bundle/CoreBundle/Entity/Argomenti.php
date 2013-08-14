@@ -22,19 +22,19 @@ class Argomenti
     /**
      * @var integer
      *
-     * @ORM\Column(name="argomento", type="integer")
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="SEQUENCE")
      * @ORM\SequenceGenerator(sequenceName="argomenti_argomento_seq", allocationSize=1, initialValue=1)
      */
-    private $argomento;
+    private $id;
 
     /**
      * @var \Scuola247\Bundle\CoreBundle\Entity\Materie
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Materie")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="materia", referencedColumnName="materia")
+     *   @ORM\JoinColumn(name="materia",  referencedColumnName="id")
      * })
      */
     private $materia;
@@ -44,7 +44,7 @@ class Argomenti
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Classi")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="classe", referencedColumnName="classe")
+     *   @ORM\JoinColumn(name="classe",  referencedColumnName="id")
      * })
      */
     private $classe;

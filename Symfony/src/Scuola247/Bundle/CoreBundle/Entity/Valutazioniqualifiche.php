@@ -22,19 +22,19 @@ class Valutazioniqualifiche
     /**
      * @var integer
      *
-     * @ORM\Column(name="valutazionequalifica", type="integer")
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="SEQUENCE")
      * @ORM\SequenceGenerator(sequenceName="valutazioniqualifiche_valutazionequalifica_seq", allocationSize=1, initialValue=1)
      */
-    private $valutazionequalifica;
+    private $id;
 
     /**
      * @var \Scuola247\Bundle\CoreBundle\Entity\Voti
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Voti")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="voto", referencedColumnName="voto")
+     *   @ORM\JoinColumn(name="voto",  referencedColumnName="id")
      * })
      */
     private $voto;
@@ -44,7 +44,7 @@ class Valutazioniqualifiche
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Valutazioni")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="valutazione", referencedColumnName="valutazione")
+     *   @ORM\JoinColumn(name="valutazione",  referencedColumnName="id")
      * })
      */
     private $valutazione;
@@ -54,7 +54,7 @@ class Valutazioniqualifiche
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Qualifiche")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="qualifica", referencedColumnName="qualifica")
+     *   @ORM\JoinColumn(name="qualifica",  referencedColumnName="id")
      * })
      */
     private $qualifica;

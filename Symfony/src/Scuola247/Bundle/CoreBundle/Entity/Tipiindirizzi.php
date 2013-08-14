@@ -22,12 +22,12 @@ class Tipiindirizzi
     /**
      * @var integer
      *
-     * @ORM\Column(name="tipoindirizzo", type="integer")
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="SEQUENCE")
      * @ORM\SequenceGenerator(sequenceName="tipiindirizzi_tipoindirizzo_seq", allocationSize=1, initialValue=1)
      */
-    private $tipoindirizzo;
+    private $id;
 
 
 }

@@ -29,19 +29,19 @@ class Librettipersonaliconversazioni
     /**
      * @var integer
      *
-     * @ORM\Column(name="librettopersonaleconversazione", type="integer")
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="SEQUENCE")
      * @ORM\SequenceGenerator(sequenceName="librettipersonaliconversazioni_librettopersonaleconversazione_seq", allocationSize=1, initialValue=1)
      */
-    private $librettopersonaleconversazione;
+    private $id;
 
     /**
      * @var \Scuola247\Bundle\CoreBundle\Entity\Librettipersonali
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Librettipersonali")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="librettopersonale", referencedColumnName="librettopersonale")
+     *   @ORM\JoinColumn(name="librettopersonale",  referencedColumnName="id")
      * })
      */
     private $librettopersonale;

@@ -29,19 +29,19 @@ class Festivi
     /**
      * @var integer
      *
-     * @ORM\Column(name="festivo", type="integer")
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="SEQUENCE")
      * @ORM\SequenceGenerator(sequenceName="festivi_festivo_seq", allocationSize=1, initialValue=1)
      */
-    private $festivo;
+    private $id;
 
     /**
      * @var \Scuola247\Bundle\CoreBundle\Entity\Istituti
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Istituti")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="istituto", referencedColumnName="istituto")
+     *   @ORM\JoinColumn(name="istituto",  referencedColumnName="id")
      * })
      */
     private $istituto;

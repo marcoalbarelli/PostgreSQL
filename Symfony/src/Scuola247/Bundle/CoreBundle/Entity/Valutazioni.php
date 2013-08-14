@@ -71,19 +71,19 @@ class Valutazioni
     /**
      * @var integer
      *
-     * @ORM\Column(name="valutazione", type="integer")
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="SEQUENCE")
      * @ORM\SequenceGenerator(sequenceName="valutazioni_valutazione_seq", allocationSize=1, initialValue=1)
      */
-    private $valutazione;
+    private $id;
 
     /**
      * @var \Scuola247\Bundle\CoreBundle\Entity\Tipivoto
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Tipivoto")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="tipovoto", referencedColumnName="tipovoto")
+     *   @ORM\JoinColumn(name="tipovoto",  referencedColumnName="id")
      * })
      */
     private $tipovoto;
@@ -93,7 +93,7 @@ class Valutazioni
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Argomenti")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="agomento", referencedColumnName="argomento")
+     *   @ORM\JoinColumn(name="agomento",  referencedColumnName="id")
      * })
      */
     private $agomento;

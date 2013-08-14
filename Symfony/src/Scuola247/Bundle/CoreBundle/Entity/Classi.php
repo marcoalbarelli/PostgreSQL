@@ -36,19 +36,19 @@ class Classi
     /**
      * @var integer
      *
-     * @ORM\Column(name="classe", type="integer")
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="SEQUENCE")
      * @ORM\SequenceGenerator(sequenceName="classi_classe_seq", allocationSize=1, initialValue=1)
      */
-    private $classe;
+    private $id;
 
     /**
      * @var \Scuola247\Bundle\CoreBundle\Entity\Indirizziscolastici
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Indirizziscolastici")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="indirizzoscolastico", referencedColumnName="indirizzoscolastico")
+     *   @ORM\JoinColumn(name="indirizzoscolastico",  referencedColumnName="id")
      * })
      */
     private $indirizzoscolastico;
@@ -58,7 +58,7 @@ class Classi
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Anniscolastici")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="annoscolastico", referencedColumnName="annoscolastico")
+     *   @ORM\JoinColumn(name="annoscolastico",  referencedColumnName="id")
      * })
      */
     private $annoscolastico;

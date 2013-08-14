@@ -43,19 +43,19 @@ class Loglezioni
     /**
      * @var integer
      *
-     * @ORM\Column(name="loglezione", type="integer")
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="SEQUENCE")
      * @ORM\SequenceGenerator(sequenceName="loglezioni_loglezione_seq", allocationSize=1, initialValue=1)
      */
-    private $loglezione;
+    private $id;
 
     /**
      * @var \Scuola247\Bundle\CoreBundle\Entity\Personefisiche
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Personefisiche")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="docente", referencedColumnName="personafisica")
+     *   @ORM\JoinColumn(name="docente",  referencedColumnName="id")
      * })
      */
     private $docente;
@@ -65,7 +65,7 @@ class Loglezioni
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Personefisiche")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="logrevisore", referencedColumnName="personafisica")
+     *   @ORM\JoinColumn(name="logrevisore",  referencedColumnName="id")
      * })
      */
     private $logrevisore;
@@ -75,7 +75,7 @@ class Loglezioni
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Materie")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="materia", referencedColumnName="materia")
+     *   @ORM\JoinColumn(name="materia",  referencedColumnName="id")
      * })
      */
     private $materia;
@@ -85,7 +85,7 @@ class Loglezioni
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Lezioni")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="lezione", referencedColumnName="lezione")
+     *   @ORM\JoinColumn(name="lezione",  referencedColumnName="id")
      * })
      */
     private $lezione;
@@ -95,7 +95,7 @@ class Loglezioni
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Classi")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="classe", referencedColumnName="classe")
+     *   @ORM\JoinColumn(name="classe",  referencedColumnName="id")
      * })
      */
     private $classe;

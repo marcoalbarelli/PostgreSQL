@@ -50,19 +50,19 @@ class Logannotazioni
     /**
      * @var integer
      *
-     * @ORM\Column(name="logannotazione", type="integer")
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="SEQUENCE")
      * @ORM\SequenceGenerator(sequenceName="logannotazioni_logannotazione_seq", allocationSize=1, initialValue=1)
      */
-    private $logannotazione;
+    private $id;
 
     /**
      * @var \Scuola247\Bundle\CoreBundle\Entity\Personefisiche
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Personefisiche")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="logrevisore", referencedColumnName="personafisica")
+     *   @ORM\JoinColumn(name="logrevisore",  referencedColumnName="id")
      * })
      */
     private $logrevisore;
@@ -72,7 +72,7 @@ class Logannotazioni
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Personefisiche")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="alunno", referencedColumnName="personafisica")
+     *   @ORM\JoinColumn(name="alunno",  referencedColumnName="id")
      * })
      */
     private $alunno;
@@ -82,7 +82,7 @@ class Logannotazioni
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Personefisiche")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="docente", referencedColumnName="personafisica")
+     *   @ORM\JoinColumn(name="docente",  referencedColumnName="id")
      * })
      */
     private $docente;
@@ -92,7 +92,7 @@ class Logannotazioni
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Classi")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="classe", referencedColumnName="classe")
+     *   @ORM\JoinColumn(name="classe",  referencedColumnName="id")
      * })
      */
     private $classe;
@@ -102,7 +102,7 @@ class Logannotazioni
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Annotazioni")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="annotazione", referencedColumnName="annotazione")
+     *   @ORM\JoinColumn(name="annotazione",  referencedColumnName="id")
      * })
      */
     private $annotazione;

@@ -22,19 +22,19 @@ class Librettipersonalimessaggiletti
     /**
      * @var integer
      *
-     * @ORM\Column(name="librettopersonalemessaggioletto", type="integer")
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="SEQUENCE")
      * @ORM\SequenceGenerator(sequenceName="librettipersonalimessaggiletti_librettopersonalemessaggioletto_seq", allocationSize=1, initialValue=1)
      */
-    private $librettopersonalemessaggioletto;
+    private $id;
 
     /**
      * @var \Scuola247\Bundle\CoreBundle\Entity\Personefisiche
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Personefisiche")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="personafisica", referencedColumnName="personafisica")
+     *   @ORM\JoinColumn(name="personafisica",  referencedColumnName="id")
      * })
      */
     private $personafisica;
@@ -44,7 +44,7 @@ class Librettipersonalimessaggiletti
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Librettipersonalimessaggi")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="librettopersonalemessaggio", referencedColumnName="librettopersonalemessaggio")
+     *   @ORM\JoinColumn(name="librettopersonalemessaggio",  referencedColumnName="id")
      * })
      */
     private $librettopersonalemessaggio;

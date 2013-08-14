@@ -43,19 +43,19 @@ class Logassenze
     /**
      * @var integer
      *
-     * @ORM\Column(name="logassenza", type="integer")
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="SEQUENCE")
      * @ORM\SequenceGenerator(sequenceName="logassenze_logassenza_seq", allocationSize=1, initialValue=1)
      */
-    private $logassenza;
+    private $id;
 
     /**
      * @var \Scuola247\Bundle\CoreBundle\Entity\Personefisiche
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Personefisiche")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="alunno", referencedColumnName="personafisica")
+     *   @ORM\JoinColumn(name="alunno",  referencedColumnName="id")
      * })
      */
     private $alunno;
@@ -65,7 +65,7 @@ class Logassenze
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Personefisiche")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="docente", referencedColumnName="personafisica")
+     *   @ORM\JoinColumn(name="docente",  referencedColumnName="id")
      * })
      */
     private $docente;
@@ -75,17 +75,17 @@ class Logassenze
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Personefisiche")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="logrevisore", referencedColumnName="personafisica")
+     *   @ORM\JoinColumn(name="logrevisore",  referencedColumnName="id")
      * })
      */
     private $logrevisore;
 
     /**
-     * @var \Scuola247\Bundle\CoreBundle\Entity\Loggiustificazioni
+     * @var \Scuola247\Bundle\CoreBundle\Entity\Giustificazioni
      *
-     * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Loggiustificazioni")
+     * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Giustificazioni")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="giustificazione", referencedColumnName="giustificazione")
+     *   @ORM\JoinColumn(name="giustificazione",  referencedColumnName="id")
      * })
      */
     private $giustificazione;
@@ -95,7 +95,7 @@ class Logassenze
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Classi")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="classe", referencedColumnName="classe")
+     *   @ORM\JoinColumn(name="classe",  referencedColumnName="id")
      * })
      */
     private $classe;
@@ -105,7 +105,7 @@ class Logassenze
      *
      * @ORM\ManyToOne(targetEntity="Scuola247\Bundle\CoreBundle\Entity\Assenze")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="assenza", referencedColumnName="assenza")
+     *   @ORM\JoinColumn(name="assenza",  referencedColumnName="id")
      * })
      */
     private $assenza;
