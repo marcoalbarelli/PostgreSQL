@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Scuola247\Bundle\CoreBundle\Entity\Librettipersonalimessaggi" table="librettipersonalimessaggi">
+    <id name="librettopersonalemessaggio" type="integer" column="librettopersonalemessaggio">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="fattoil" type="datetime" column="fattoil" nullable="false"/>
+    <field name="messaggio" type="string" column="messaggio" length="2048" nullable="false"/>
+    <field name="tipomessaggio" type="string" column="tipomessaggio" nullable="false"/>
+    <many-to-one field="personafisica" target-entity="Personefisiche">
+      <join-columns>
+        <join-column name="personafisica" referenced-column-name="personafisica"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="librettopersonaleconversazione" target-entity="Librettipersonaliconversazioni">
+      <join-columns>
+        <join-column name="librettopersonaleconversazione" referenced-column-name="librettopersonaleconversazione"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

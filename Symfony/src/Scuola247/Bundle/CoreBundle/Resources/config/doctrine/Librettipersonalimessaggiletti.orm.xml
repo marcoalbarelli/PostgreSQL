@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Scuola247\Bundle\CoreBundle\Entity\Librettipersonalimessaggiletti" table="librettipersonalimessaggiletti">
+    <id name="librettopersonalemessaggioletto" type="integer" column="librettopersonalemessaggioletto">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="lettoil" type="datetime" column="lettoil" nullable="false"/>
+    <many-to-one field="personafisica" target-entity="Personefisiche">
+      <join-columns>
+        <join-column name="personafisica" referenced-column-name="personafisica"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="librettopersonalemessaggio" target-entity="Librettipersonalimessaggi">
+      <join-columns>
+        <join-column name="librettopersonalemessaggio" referenced-column-name="librettopersonalemessaggio"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

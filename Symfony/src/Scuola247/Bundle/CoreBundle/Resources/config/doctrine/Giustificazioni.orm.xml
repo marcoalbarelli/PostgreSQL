@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Scuola247\Bundle\CoreBundle\Entity\Giustificazioni" table="giustificazioni">
+    <id name="giustificazione" type="integer" column="giustificazione">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="giorno" type="date" column="giorno" nullable="false"/>
+    <field name="periododilezione" type="integer" column="periododilezione" nullable="false"/>
+    <field name="descrizione" type="string" column="descrizione" length="2048" nullable="false"/>
+    <many-to-one field="docente" target-entity="Personefisiche">
+      <join-columns>
+        <join-column name="docente" referenced-column-name="personafisica"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="alunno" target-entity="Personefisiche">
+      <join-columns>
+        <join-column name="alunno" referenced-column-name="personafisica"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="librettopersonaleconversazione" target-entity="Librettipersonaliconversazioni">
+      <join-columns>
+        <join-column name="librettopersonaleconversazione" referenced-column-name="librettopersonaleconversazione"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="classe" target-entity="Classi">
+      <join-columns>
+        <join-column name="classe" referenced-column-name="classe"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

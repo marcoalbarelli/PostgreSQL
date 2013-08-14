@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Scuola247\Bundle\CoreBundle\Entity\Valutazioniqualifiche" table="valutazioniqualifiche">
+    <id name="valutazionequalifica" type="integer" column="valutazionequalifica">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="note" type="string" column="note" length="160" nullable="true"/>
+    <many-to-one field="voto" target-entity="Voti">
+      <join-columns>
+        <join-column name="voto" referenced-column-name="voto"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="valutazione" target-entity="Valutazioni">
+      <join-columns>
+        <join-column name="valutazione" referenced-column-name="valutazione"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="qualifica" target-entity="Qualifiche">
+      <join-columns>
+        <join-column name="qualifica" referenced-column-name="qualifica"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

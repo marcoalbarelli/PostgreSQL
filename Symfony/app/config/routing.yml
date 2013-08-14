@@ -1,0 +1,4 @@
+scuola247_core:
+    resource: "@Scuola247CoreBundle/Resources/config/routing.yml"
+    prefix:   /
+

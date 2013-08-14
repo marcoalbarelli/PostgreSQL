@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Scuola247\Bundle\CoreBundle\Entity\Classi" table="classi">
+    <id name="classe" type="integer" column="classe">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="sezione" type="string" column="sezione" length="5" nullable="true"/>
+    <field name="annodicorso" type="integer" column="annodicorso" nullable="false"/>
+    <field name="descrizione" type="string" column="descrizione" length="160" nullable="false"/>
+    <many-to-one field="indirizzoscolastico" target-entity="Indirizziscolastici">
+      <join-columns>
+        <join-column name="indirizzoscolastico" referenced-column-name="indirizzoscolastico"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="annoscolastico" target-entity="Anniscolastici">
+      <join-columns>
+        <join-column name="annoscolastico" referenced-column-name="annoscolastico"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

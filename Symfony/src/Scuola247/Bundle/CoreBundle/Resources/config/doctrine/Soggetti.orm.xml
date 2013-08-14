@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Scuola247\Bundle\CoreBundle\Entity\Soggetti" table="soggetti">
+    <id name="soggetto" type="integer" column="soggetto">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="descrizione" type="string" column="descrizione" length="160" nullable="false"/>
+    <field name="tiposoggetto" type="string" column="tiposoggetto" nullable="false"/>
+    <field name="foto" type="blob" column="foto" nullable="true"/>
+    <field name="autorizzazionedatipersonali" type="date" column="autorizzazionedatipersonali" nullable="true"/>
+    <many-to-one field="soggettodiriferimento" target-entity="Soggetti">
+      <join-columns>
+        <join-column name="soggettodiriferimento" referenced-column-name="soggetto"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="istituto" target-entity="Istituti">
+      <join-columns>
+        <join-column name="istituto" referenced-column-name="istituto"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

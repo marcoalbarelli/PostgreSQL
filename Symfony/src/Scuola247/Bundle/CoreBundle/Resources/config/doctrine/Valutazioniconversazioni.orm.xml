@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Scuola247\Bundle\CoreBundle\Entity\Valutazioniconversazioni" table="valutazioniconversazioni">
+    <id name="valutazione" type="integer" column="valutazione"/>
+    <id name="conversazione" type="integer" column="conversazione"/>
+  </entity>
+</doctrine-mapping>

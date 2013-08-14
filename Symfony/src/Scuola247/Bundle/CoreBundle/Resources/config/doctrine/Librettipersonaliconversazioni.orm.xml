@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Scuola247\Bundle\CoreBundle\Entity\Librettipersonaliconversazioni" table="librettipersonaliconversazioni">
+    <id name="librettopersonaleconversazione" type="integer" column="librettopersonaleconversazione">
+      <generator strategy="SEQUENCE"/>
+    </id>
+    <field name="oggetto" type="string" column="oggetto" length="160" nullable="false"/>
+    <field name="tipoconversazione" type="string" column="tipoconversazione" nullable="false"/>
+    <many-to-one field="librettopersonale" target-entity="Librettipersonali">
+      <join-columns>
+        <join-column name="librettopersonale" referenced-column-name="librettopersonale"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>
